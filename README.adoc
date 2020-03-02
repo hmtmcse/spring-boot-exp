@@ -13,11 +13,6 @@ Spring Boot Dev Tools auto compile ::
 . *Git Branch* :
 
 
-Spring Boot DevTools auto compile ::
-. *Topic* :  Automatic compile code on change and restart
-. *YouTube*:
-. *Git Branch* :
-
 Spring Boot Form Data Handling ::
 . *Topic* :  Consume from data and process
 . *YouTube*:
