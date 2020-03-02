@@ -1,0 +1,35 @@
+= Spring Boot Tutorial
+
+
+Spring Boot Bismillah ::
+. *Topic* : Spring Boot Start from scratch
+. *YouTube*: https://www.youtube.com/watch?v=TNoP1vZ6tgE
+. *Git Branch* : bismillah
+
+
+Spring Boot DevTools auto compile ::
+. *Topic* :  Automatic compile code on change and restart
+. *YouTube*:
+. *Git Branch* :
+
+
+Spring Boot DevTools auto compile ::
+. *Topic* :  Automatic compile code on change and restart
+. *YouTube*:
+. *Git Branch* :
+
+Spring Boot Form Data Handling ::
+. *Topic* :  Consume from data and process
+. *YouTube*:
+. *Git Branch* :
+
+Spring Boot JSON Data Handling ::
+. *Topic* :  JSON Data receive and response
+. *YouTube*:
+. *Git Branch* :
+
+
+Spring Boot File Data Handling ::
+. *Topic* :  File upload and process
+. *YouTube*:
+. *Git Branch* :
