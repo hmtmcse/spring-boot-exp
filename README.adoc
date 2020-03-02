@@ -7,7 +7,7 @@ Spring Boot Bismillah ::
 . *Git Branch* : bismillah
 
 
-Spring Boot DevTools auto compile ::
+Spring Boot Dev Tools auto compile ::
 . *Topic* :  Automatic compile code on change and restart
 . *YouTube*:
 . *Git Branch* :
