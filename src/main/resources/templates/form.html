@@ -1,8 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <body>
+<br/>
+<br/>
+
 <form action="#" th:action="@{/formValidation}" th:object="${formInput}" method="post">
-    <table align="center" >
+    <table>
         <tr>
             <td>Name:</td>
             <td><input type="text" th:field="*{name}" /></td>

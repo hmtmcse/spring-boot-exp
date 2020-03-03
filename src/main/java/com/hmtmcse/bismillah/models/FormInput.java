@@ -11,7 +11,7 @@ public class FormInput {
     @AssertTrue(message = "Please accept agreement for continue.")
     private Boolean isAcceptAgreement = false;
 
-    @Size(min = 5, max = 200, message = "Please write yourself between 10 and 200 characters.")
+    @Size(min = 5, max = 200, message = "Please write yourself between 5 and 200 characters.")
     private String aboutMe;
 
     @Min(value = 18, message = "Age should not be less than 18.")
