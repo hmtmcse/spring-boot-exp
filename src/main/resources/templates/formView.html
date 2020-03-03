@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+<table align="center" th:object="${formInput}">
+    <tr>
+        <td>Name:</td>
+        <td th:text="*{name}"></td>
+    </tr>
+    <tr>
+        <td>Email Address:</td>
+        <td th:text="*{email}"></td>
+    </tr>
+    <tr>
+        <td>Age:</td>
+        <td th:text="*{age}"></td>
+    </tr>
+    <tr>
+        <td>About:</td>
+        <td th:text="*{aboutMe}" ></td>
+    </tr>
+    <tr>
+        <td>Agreement</td>
+        <td th:text="*{isAcceptAgreement}"></td>
+    </tr>
+</table>
+</body>
+</html>
