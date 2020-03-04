@@ -65,3 +65,21 @@ Spring Boot With ReactJS UI ::
 . *Topic* :  Consume RESTfull API with ReactJS
 . *YouTube*:
 . *Git Branch* :
+
+
+Spring Boot Relational Database ::
+. *Topic* :  Experiment with relational database. *OneToOne*, *OneToMany*, *ManyToMany*
+. *YouTube*:
+. *Git Branch* :
+
+
+Spring Boot Play with Query (JPA and Hibernate) ::
+. *Topic* :  HQL, Joining, Repositories, Searching
+. *YouTube*:
+. *Git Branch* :
+
+
+Spring Boot Multi Tenant ::
+. *Topic* :  Play with Database base Multi Tenant
+. *YouTube*:
+. *Git Branch* :
