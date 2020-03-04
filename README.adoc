@@ -6,78 +6,91 @@ Spring Boot Bismillah ::
 . *YouTube*: https://www.youtube.com/watch?v=TNoP1vZ6tgE
 . *Git Branch* : bismillah
 
+{blank} +
 
 Spring Boot Dev Tools auto compile ::
 . *Topic* :  Automatic compile code on change and restart
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Form Data Handling ::
 . *Topic* :  Consume from data and process
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot JSON Data Handling ::
 . *Topic* :  JSON Data receive and response
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot File Data Handling ::
 . *Topic* :  File upload and process
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Bootstrap CSS ::
 . *Topic* :  Include Bootstrap css for design ui
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot CRUD with MySQL ::
 . *Topic* :  Create, Read, Update, Delete operation with pagination, sorting, max load
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Swagger ::
 . *Topic* :  Integrate swagger documentation for API
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot JWT Authentication ::
 . *Topic* :  Spring security JWT Implementation
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot OAuth2 Authentication ::
 . *Topic* :  Spring security OAuth 2 Implementation
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot With ReactJS UI ::
 . *Topic* :  Consume RESTfull API with ReactJS
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Relational Database ::
 . *Topic* :  Experiment with relational database. *OneToOne*, *OneToMany*, *ManyToMany*
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Play with Query (JPA and Hibernate) ::
 . *Topic* :  HQL, Joining, Repositories, Searching
 . *YouTube*:
 . *Git Branch* :
 
+{blank} +
 
 Spring Boot Multi Tenant ::
 . *Topic* :  Play with Database base Multi Tenant
