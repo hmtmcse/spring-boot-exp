@@ -96,3 +96,9 @@ Spring Boot Multi Tenant ::
 . *Topic* :  Play with Database base Multi Tenant
 . *YouTube*:
 . *Git Branch* :
+
+
+Spring Boot WebSocket ::
+. *Topic* :  Play with WebSocket for Spring boot
+. *YouTube*:
+. *Git Branch* :
