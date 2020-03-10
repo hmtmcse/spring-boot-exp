@@ -16,7 +16,7 @@ public class FormInputController {
 
     @GetMapping("/form")
     public String form(Model model) {
-        model.addAttribute("formInput", FormInput.builder().build());
+        model.addAttribute("formInput", new FormInput());
         return "form";
     }
 
