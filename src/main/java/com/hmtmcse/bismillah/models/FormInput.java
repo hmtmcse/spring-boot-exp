@@ -1,7 +1,10 @@
 package com.hmtmcse.bismillah.models;
 
+import lombok.Builder;
 import javax.validation.constraints.*;
 
+
+@Builder
 public class FormInput {
 
 
