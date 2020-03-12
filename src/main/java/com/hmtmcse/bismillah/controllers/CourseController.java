@@ -3,6 +3,7 @@ package com.hmtmcse.bismillah.controllers;
 import com.hmtmcse.bismillah.domain.Course;
 import com.hmtmcse.bismillah.repository.CourseRepository;
 import com.hmtmcse.bismillah.service.CourseCustomService;
+import com.hmtmcse.bismillah.service.EmCustomQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class CourseController {
 
     @Autowired
     private CourseCustomService courseCustomService;
+
+    @Autowired
+    private EmCustomQuery emCustomQuery;
 
     @GetMapping(value = {"/form", "/form/{id}"})
     public String createUpdate() {
@@ -47,6 +51,12 @@ public class CourseController {
     @ResponseBody
     public Iterable<Course> readPaginationList() {
         return courseCustomService.getWithPagination(1, 10, Sort.Direction.DESC, "id");
+    }
+
+    @GetMapping("/listQuery")
+    @ResponseBody
+    public Iterable<Course> readQueryList() {
+        return (Iterable<Course>) emCustomQuery.getAllCourse();
     }
 
     @GetMapping("/details")
