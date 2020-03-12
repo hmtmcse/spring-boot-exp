@@ -2,6 +2,7 @@ package com.hmtmcse.bismillah.controllers;
 
 import com.hmtmcse.bismillah.domain.Course;
 import com.hmtmcse.bismillah.repository.CourseRepository;
+import com.hmtmcse.bismillah.service.CourseCustomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,9 @@ public class CourseController {
 
     @Autowired
     private CourseRepository courseRepository;
+
+    @Autowired
+    private CourseCustomService courseCustomService;
 
     @GetMapping(value = {"/form", "/form/{id}"})
     public String createUpdate() {
@@ -35,7 +39,7 @@ public class CourseController {
     @GetMapping("/list")
     @ResponseBody
     public Iterable<Course> readList() {
-        return courseRepository.findAll();
+        return courseCustomService.getPaginationData("id");
     }
 
     @GetMapping("/details")
