@@ -4,6 +4,7 @@ import com.hmtmcse.bismillah.domain.Course;
 import com.hmtmcse.bismillah.repository.CourseRepository;
 import com.hmtmcse.bismillah.service.CourseCustomService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,12 @@ public class CourseController {
     @ResponseBody
     public Iterable<Course> readList() {
         return courseCustomService.getPaginationData("id");
+    }
+
+    @GetMapping("/listPagination")
+    @ResponseBody
+    public Iterable<Course> readPaginationList() {
+        return courseCustomService.getWithPagination(1, 10, Sort.Direction.DESC, "id");
     }
 
     @GetMapping("/details")
