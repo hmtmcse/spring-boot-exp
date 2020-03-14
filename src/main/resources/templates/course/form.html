@@ -28,7 +28,7 @@
             <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
         </tr>
         <tr>
-            <td><button type="submit">Submit</button></td>
+            <td><button type="submit" th:text="${title}">Submit</button></td>
         </tr>
         <input type="hidden" th:field="*{id}"/>
     </table>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 
 @Controller()
@@ -44,7 +45,7 @@ public class CourseController {
     public String edit(@PathVariable(name = "id") Long id, Model model) {
         model.addAttribute("title", "Update");
         model.addAttribute("formAction", "update");
-        if (id == null){
+        if (id == null) {
             return "redirect:/course/readList";
         }
         model.addAttribute("course", courseRepository.findById(id));
@@ -63,16 +64,17 @@ public class CourseController {
     }
 
     @GetMapping(value = {"/readList", "/"})
-    public String readList(Model model){
+    public String readList(Model model) {
         model.addAttribute("courses", courseRepository.findAll());
         return "course/readList";
     }
 
 
-
-    @GetMapping("/delete")
-    public String delete(){
-        return "redirect:/form";
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable(name = "id") Long id) {
+        Optional<Course> course = courseRepository.findById(id);
+        course.ifPresent(value -> courseRepository.delete(value));
+        return "redirect:/course/readList";
     }
 
 }
