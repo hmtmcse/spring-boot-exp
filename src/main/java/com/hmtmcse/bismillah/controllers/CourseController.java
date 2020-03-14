@@ -4,6 +4,7 @@ import com.hmtmcse.bismillah.domain.Course;
 import com.hmtmcse.bismillah.repository.CourseRepository;
 import com.hmtmcse.bismillah.service.CourseCustomService;
 import com.hmtmcse.bismillah.service.EmCustomQuery;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
@@ -57,6 +58,15 @@ public class CourseController {
     @ResponseBody
     public Iterable<Course> readQueryList() {
         return (Iterable<Course>) emCustomQuery.getAllCourse();
+    }
+
+    @GetMapping("/copyTest")
+    @ResponseBody
+    public Course copyTest() {
+        Course course = new Course().name("Bangla").credit(1.5);
+        Course fromPost = new Course().description("This is bangla Description");
+        BeanUtils.copyProperties(course, fromPost);
+        return course;
     }
 
     @GetMapping("/details")
