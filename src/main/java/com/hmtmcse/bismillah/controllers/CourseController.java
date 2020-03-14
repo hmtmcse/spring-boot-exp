@@ -29,21 +29,6 @@ public class CourseController {
         return "course/form";
     }
 
-    @GetMapping(value = {"/form/{id}"})
-    public String form(@PathVariable(name = "id") Long id, Model model) {
-        String title = "Create";
-        String formAction = "create";
-        Course course = new Course();
-        if (id != null){
-            title = "Update";
-            formAction = "update";
-        }
-        model.addAttribute("title", title);
-        model.addAttribute("formAction", formAction);
-        model.addAttribute("course", course);
-        return "course/form";
-    }
-
     @PostMapping("/create")
     public String create(@Valid Course course, BindingResult bindingResult, Model model) {
         model.addAttribute("title", "Create");
@@ -52,26 +37,38 @@ public class CourseController {
             return "course/form";
         }
         courseRepository.save(course);
-        return "redirect:/course/form";
+        return "redirect:/course/readList";
     }
 
-    @GetMapping("/readDetails")
-    public String readDetails(){
-        return "redirect:/form";
-    }
-
-    @GetMapping("/readList")
-    public String readList(){
-        return "redirect:/form";
+    @GetMapping(value = {"/form/{id}"})
+    public String edit(@PathVariable(name = "id") Long id, Model model) {
+        model.addAttribute("title", "Update");
+        model.addAttribute("formAction", "update");
+        if (id == null){
+            return "redirect:/course/readList";
+        }
+        model.addAttribute("course", courseRepository.findById(id));
+        return "course/form";
     }
 
     @PostMapping("/update")
-    public String update(@Valid Course course, BindingResult bindingResult) {
+    public String update(@Valid Course course, BindingResult bindingResult, Model model) {
+        model.addAttribute("title", "Update");
+        model.addAttribute("formAction", "update");
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "course/form";
         }
-        return "redirect:/form";
+        courseRepository.save(course);
+        return "redirect:/course/readList";
     }
+
+    @GetMapping(value = {"/readList", "/"})
+    public String readList(Model model){
+        model.addAttribute("courses", courseRepository.findAll());
+        return "course/readList";
+    }
+
+
 
     @GetMapping("/delete")
     public String delete(){

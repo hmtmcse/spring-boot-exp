@@ -9,6 +9,7 @@
 <br/>
 <br/>
 
+<div align="center">
 <form action="#" th:action="@{/course/__${formAction}__}" th:object="${course}" method="post">
     <table>
         <tr>
@@ -29,9 +30,10 @@
         <tr>
             <td><button type="submit">Submit</button></td>
         </tr>
+        <input type="hidden" th:field="*{id}"/>
     </table>
 </form>
-
+</div>
 
 </body>
 </html>
