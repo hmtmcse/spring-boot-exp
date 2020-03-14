@@ -1,5 +1,6 @@
 package com.hmtmcse.bismillah.controllers;
 
+import com.hmtmcse.bismillah.domain.Course;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CourseController {
 
 
-    @GetMapping(value = {"/form/{id}", "/form"})
-    public String form(@PathVariable(required = false, name = "id") Long id, Model model) {
+    @GetMapping(value = {"/form"})
+    public String form(Model model) {
+        model.addAttribute("title", "Create");
+        model.addAttribute("formAction", "create");
+        model.addAttribute("course", new Course());
+        return "course/form";
+    }
+
+    @GetMapping(value = {"/form/{id}"})
+    public String form(@PathVariable(name = "id") Long id, Model model) {
         String title = "Create";
+        String formAction = "create";
+        Course course = new Course();
         if (id != null){
             title = "Update";
+            formAction = "update";
         }
         model.addAttribute("title", title);
+        model.addAttribute("formAction", formAction);
+        model.addAttribute("course", course);
         return "course/form";
     }
 
