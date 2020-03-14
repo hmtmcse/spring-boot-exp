@@ -51,7 +51,7 @@ public class TestingBeanUtil {
         beanWrapper.setPropertyValue("name", "Bangla");
         beanWrapper.setPropertyValue("credit", 1.5);
         Course fromPost = new Course().description("This is bangla Description");
-        fromPost.setDescription("This is bangla Description");
+        fromPost.description("This is bangla Description");
         BeanUtils.copyProperties(beanWrapper.getWrappedInstance(), fromPost);
         System.out.println(fromPost);
     }
