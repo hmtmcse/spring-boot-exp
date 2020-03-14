@@ -8,10 +8,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller()
 @RequestMapping("/course")
@@ -74,8 +73,25 @@ public class CourseController {
         return "readDetails";
     }
 
-    @PostMapping("/update")
-    public String update() {
+    @PostMapping("/update1/{id}")
+    public String update1Way(@PathVariable("id") Long id, Course course) {
+
+        // Validate if needed
+        course.id(id);
+        courseRepository.save(course);
+        return "update";
+    }
+
+    @PostMapping("/update2/{id}")
+    public String update2Way(@PathVariable("id") Long id, Course course) {
+        Optional<Course> courseOptional = courseRepository.findById(id);
+        if (courseOptional.isPresent()){
+            Course updateCourse = courseOptional.get();
+            updateCourse.credit(course.credit);
+            updateCourse.name(course.name);
+            updateCourse.description(course.description);
+            courseRepository.save(updateCourse);
+        }
         return "update";
     }
 
