@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <td>Description:</td>
-            <td><input type="text" th:field="*{description}" /></td>
+            <td><textarea type="text" th:field="*{description}"/></td>
             <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
         </tr>
         <tr>
