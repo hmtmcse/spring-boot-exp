@@ -1,6 +1,8 @@
 package com.hmtmcse.bismillah.controllers;
 
 import com.hmtmcse.bismillah.domain.Course;
+import com.hmtmcse.bismillah.repository.CourseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,6 +18,8 @@ import javax.validation.Valid;
 @RequestMapping("/course")
 public class CourseController {
 
+    @Autowired
+    private CourseRepository courseRepository;
 
     @GetMapping(value = {"/form"})
     public String form(Model model) {
@@ -41,11 +45,14 @@ public class CourseController {
     }
 
     @PostMapping("/create")
-    public String create(@Valid Course course, BindingResult bindingResult) {
+    public String create(@Valid Course course, BindingResult bindingResult, Model model) {
+        model.addAttribute("title", "Create");
+        model.addAttribute("formAction", "create");
         if (bindingResult.hasErrors()) {
             return "course/form";
         }
-        return "course/form";
+        courseRepository.save(course);
+        return "redirect:/course/form";
     }
 
     @GetMapping("/readDetails")

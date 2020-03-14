@@ -18,13 +18,13 @@
         </tr>
         <tr>
             <td>Credit:</td>
-            <td><input type="number" th:field="*{credit}" /></td>
+            <td><input type="number" th:field="*{credit}" step=".01"/></td>
             <td th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}">Credit Error</td>
         </tr>
         <tr>
             <td>Description:</td>
             <td><input type="text" th:field="*{description}" /></td>
-            <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">About Error</td>
+            <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
         </tr>
         <tr>
             <td><button type="submit">Submit</button></td>
