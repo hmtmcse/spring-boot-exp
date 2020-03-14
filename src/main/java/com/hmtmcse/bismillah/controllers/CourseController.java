@@ -3,10 +3,13 @@ package com.hmtmcse.bismillah.controllers;
 import com.hmtmcse.bismillah.domain.Course;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 
 @Controller()
@@ -38,8 +41,11 @@ public class CourseController {
     }
 
     @PostMapping("/create")
-    public String create(){
-        return "redirect:/form";
+    public String create(@Valid Course course, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "course/form";
+        }
+        return "course/form";
     }
 
     @GetMapping("/readDetails")
@@ -53,7 +59,10 @@ public class CourseController {
     }
 
     @PostMapping("/update")
-    public String update(){
+    public String update(@Valid Course course, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "form";
+        }
         return "redirect:/form";
     }
 

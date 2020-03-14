@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data @Accessors(fluent = true)
@@ -16,8 +17,12 @@ public class Course {
     @GeneratedValue(strategy= GenerationType.AUTO)
     public Long id;
 
+    @NotNull(message = "Please enter course name.")
     public String name;
+
+    @NotNull(message = "Please enter credit.")
     public Double credit;
+
     public String description;
 
     public Long getId() {
