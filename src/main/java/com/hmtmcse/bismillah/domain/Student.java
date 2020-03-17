@@ -1,10 +1,7 @@
 package com.hmtmcse.bismillah.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Student {
@@ -17,6 +14,7 @@ public class Student {
     public String email;
     public String password;
 
-//    public Department department;
+    @ManyToOne()
+    public Department department;
 
 }

@@ -1,9 +1,7 @@
 package com.hmtmcse.bismillah.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Department {
@@ -14,4 +12,7 @@ public class Department {
     public String name;
     public String faculty;
     public String description;
+
+    @OneToMany(mappedBy = "department")
+    public List<Student> students;
 }
