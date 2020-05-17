@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BismillahController {
 
-    @RequestMapping("/")
-    @ResponseBody
-    public String index(){
-        return "Bismillah";
-    }
-
-    @RequestMapping("/html")
-    public String htmlView(){
-        return "htmlView";
-    }
+//    @RequestMapping("/")
+//    @ResponseBody
+//    public String index(){
+//        return "Bismillah";
+//    }
+//
+//    @RequestMapping("/html")
+//    public String htmlView(){
+//        return "htmlView";
+//    }
 }
